@@ -1,10 +1,8 @@
-import javax.swing.*;
 import java.util.ArrayList;
 
 /**
  *
  */
-
 public class Player
 {
 
@@ -34,6 +32,13 @@ public class Player
     {
         if (item != null) {
             inventory.add(item);
+            System.out.println(item.getItemName() + " was added to your inventory");
+            
+            if(item.getItemName().equals("treasure"))
+            {
+                System.out.println("Congratulations " + this.name + ", you won the game!\n" +
+                                    "score: " + this.score);
+            }
         }
         else {
             System.out.println("Item is null");
