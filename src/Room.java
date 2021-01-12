@@ -22,6 +22,7 @@ public class Room
     // String is the key to a room in that direction
     // east would be an exit that goes to the Room
     private HashMap<String, Room> exits;
+    private Item item;
 
     /**
      * Create a room described "description". Initially, it has
@@ -29,10 +30,11 @@ public class Room
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) 
+    public Room(String description, Item item)
     {
         this.description = description;
         exits = new HashMap<>();
+        this.item = item;
     }
 
     /**
@@ -43,6 +45,16 @@ public class Room
     public void setExit(String direction, Room neighbor) 
     {
         exits.put(direction, neighbor);
+    }
+
+
+    /**
+     * my game doesnt generate items for each room the return value will be null.
+     * @return
+     */
+    public Item getItem()
+    {
+        return item;
     }
 
     /**
